@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="bookly@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
+    <root id="1"/>
+    <database id="2" parent="1" name="bookly">
+      <ObjectId>17078</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-05-21.11:06:28.840</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1814</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12381</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="assunto_id_seq">
+      <ObjectId>19737</ObjectId>
+      <StateNumber>1790</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="10" parent="3" name="autor_id_seq">
+      <ObjectId>19745</ObjectId>
+      <StateNumber>1791</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="11" parent="3" name="bandeira_id_seq">
+      <ObjectId>19753</ObjectId>
+      <StateNumber>1792</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="12" parent="3" name="cartao_id_seq">
+      <ObjectId>19761</ObjectId>
+      <StateNumber>1793</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="13" parent="3" name="compra_id_seq">
+      <ObjectId>19772</ObjectId>
+      <StateNumber>1794</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="14" parent="3" name="editora_id_seq">
+      <ObjectId>19780</ObjectId>
+      <StateNumber>1795</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="15" parent="3" name="frete_id_seq">
+      <ObjectId>19788</ObjectId>
+      <StateNumber>1796</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="16" parent="3" name="lista_desejos_id_seq">
+      <ObjectId>19796</ObjectId>
+      <StateNumber>1797</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="17" parent="3" name="livro_id_seq">
+      <ObjectId>19804</ObjectId>
+      <StateNumber>1798</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="18" parent="3" name="usuario_id_seq">
+      <ObjectId>19812</ObjectId>
+      <StateNumber>1799</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="19" parent="3" name="assunto">
+      <ObjectId>19739</ObjectId>
+      <StateNumber>1811</StateNumber>
+    </table>
+    <table id="20" parent="3" name="autor">
+      <ObjectId>19747</ObjectId>
+      <StateNumber>1812</StateNumber>
+    </table>
+    <table id="21" parent="3" name="bandeira">
+      <ObjectId>19755</ObjectId>
+      <StateNumber>1806</StateNumber>
+    </table>
+    <table id="22" parent="3" name="cartao">
+      <ObjectId>19763</ObjectId>
+      <StateNumber>1814</StateNumber>
+    </table>
+    <table id="23" parent="3" name="compra">
+      <ObjectId>19774</ObjectId>
+      <StateNumber>1809</StateNumber>
+    </table>
+    <table id="24" parent="3" name="compra_livro">
+      <ObjectId>19731</ObjectId>
+      <StateNumber>1803</StateNumber>
+    </table>
+    <table id="25" parent="3" name="editora">
+      <ObjectId>19782</ObjectId>
+      <StateNumber>1813</StateNumber>
+    </table>
+    <table id="26" parent="3" name="frete">
+      <ObjectId>19790</ObjectId>
+      <StateNumber>1808</StateNumber>
+    </table>
+    <table id="27" parent="3" name="lista_desejos">
+      <ObjectId>19798</ObjectId>
+      <StateNumber>1810</StateNumber>
+    </table>
+    <table id="28" parent="3" name="lista_desejos_livro">
+      <ObjectId>19734</ObjectId>
+      <StateNumber>1805</StateNumber>
+    </table>
+    <table id="29" parent="3" name="livro">
+      <ObjectId>19806</ObjectId>
+      <StateNumber>1813</StateNumber>
+    </table>
+    <table id="30" parent="3" name="usuario">
+      <ObjectId>19814</ObjectId>
+      <StateNumber>1814</StateNumber>
+    </table>
+    <column id="31" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1790</StateNumber>
+      <SequenceName>assunto_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;assunto_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="32" parent="19" name="nome">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1790</StateNumber>
+    </column>
+    <index id="33" parent="19" name="assunto_pkey">
+      <ObjectId>19743</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="19" name="assunto_pkey">
+      <ObjectId>19744</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>assunto_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1791</StateNumber>
+      <SequenceName>autor_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;autor_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="36" parent="20" name="idade">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1791</StateNumber>
+    </column>
+    <column id="37" parent="20" name="nome">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1791</StateNumber>
+    </column>
+    <index id="38" parent="20" name="autor_pkey">
+      <ObjectId>19751</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="20" name="autor_pkey">
+      <ObjectId>19752</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>autor_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1792</StateNumber>
+      <SequenceName>bandeira_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;bandeira_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="41" parent="21" name="nome">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1792</StateNumber>
+    </column>
+    <index id="42" parent="21" name="bandeira_pkey">
+      <ObjectId>19759</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="43" parent="21" name="bandeira_pkey">
+      <ObjectId>19760</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>bandeira_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1793</StateNumber>
+      <SequenceName>cartao_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;cartao_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="45" parent="22" name="cvv">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1793</StateNumber>
+    </column>
+    <column id="46" parent="22" name="nome">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1793</StateNumber>
+    </column>
+    <column id="47" parent="22" name="numero">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1793</StateNumber>
+    </column>
+    <column id="48" parent="22" name="validade">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1793</StateNumber>
+    </column>
+    <column id="49" parent="22" name="bandeira_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1793</StateNumber>
+    </column>
+    <index id="50" parent="22" name="cartao_pkey">
+      <ObjectId>19770</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="22" name="cartao_pkey">
+      <ObjectId>19771</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>cartao_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="22" name="fkrf1dbou4i48jntfxcks0725ba">
+      <ObjectId>19847</ObjectId>
+      <ColNames>bandeira_id</ColNames>
+      <RefTableName>bandeira</RefTableName>
+      <RefKeyName>bandeira_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="53" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1794</StateNumber>
+      <SequenceName>compra_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;compra_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="54" parent="23" name="valor">
+      <Position>2</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1794</StateNumber>
+    </column>
+    <column id="55" parent="23" name="cartao_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1794</StateNumber>
+    </column>
+    <column id="56" parent="23" name="frete_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1794</StateNumber>
+    </column>
+    <column id="57" parent="23" name="usuario_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1794</StateNumber>
+    </column>
+    <index id="58" parent="23" name="compra_pkey">
+      <ObjectId>19778</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="23" name="compra_pkey">
+      <ObjectId>19779</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>compra_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="23" name="fki9ayrs5qoyj93plbmyn9q3hp9">
+      <ObjectId>19852</ObjectId>
+      <ColNames>cartao_id</ColNames>
+      <RefTableName>cartao</RefTableName>
+      <RefKeyName>cartao_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="61" parent="23" name="fk1tfjwif89lkr0lwykonxsn9k9">
+      <ObjectId>19857</ObjectId>
+      <ColNames>frete_id</ColNames>
+      <RefTableName>frete</RefTableName>
+      <RefKeyName>frete_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="62" parent="23" name="fkcntjp6tnge6ogm3rx1ld4v9nd">
+      <ObjectId>19862</ObjectId>
+      <ColNames>usuario_id</ColNames>
+      <RefTableName>usuario</RefTableName>
+      <RefKeyName>usuario_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="63" parent="24" name="compra">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1788</StateNumber>
+    </column>
+    <column id="64" parent="24" name="livro">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1788</StateNumber>
+    </column>
+    <foreign-key id="65" parent="24" name="fk2bsuw94egxsa723rnkvatrf8u">
+      <ObjectId>19832</ObjectId>
+      <ColNames>compra</ColNames>
+      <RefTableName>compra</RefTableName>
+      <RefKeyName>compra_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="66" parent="24" name="fkmw332mlva1byaxe4x2uqynoqd">
+      <ObjectId>19827</ObjectId>
+      <ColNames>livro</ColNames>
+      <RefTableName>livro</RefTableName>
+      <RefKeyName>livro_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="67" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1795</StateNumber>
+      <SequenceName>editora_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;editora_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="68" parent="25" name="nome">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1795</StateNumber>
+    </column>
+    <index id="69" parent="25" name="editora_pkey">
+      <ObjectId>19786</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="25" name="editora_pkey">
+      <ObjectId>19787</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>editora_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="71" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1796</StateNumber>
+      <SequenceName>frete_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;frete_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="72" parent="26" name="nome">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1796</StateNumber>
+    </column>
+    <column id="73" parent="26" name="valor">
+      <Position>3</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1796</StateNumber>
+    </column>
+    <index id="74" parent="26" name="frete_pkey">
+      <ObjectId>19794</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="75" parent="26" name="frete_pkey">
+      <ObjectId>19795</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>frete_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="76" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1797</StateNumber>
+      <SequenceName>lista_desejos_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;lista_desejos_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="77" parent="27" name="usuario_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1797</StateNumber>
+    </column>
+    <index id="78" parent="27" name="lista_desejos_pkey">
+      <ObjectId>19802</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="79" parent="27" name="uk_j904prilqe7kwgisannmt71s1">
+      <ObjectId>19823</ObjectId>
+      <ColNames>usuario_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="27" name="lista_desejos_pkey">
+      <ObjectId>19803</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>lista_desejos_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="81" parent="27" name="uk_j904prilqe7kwgisannmt71s1">
+      <ObjectId>19824</ObjectId>
+      <ColNames>usuario_id</ColNames>
+      <UnderlyingIndexName>uk_j904prilqe7kwgisannmt71s1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="82" parent="27" name="fkg39ti0r1qlrn1ktll1i7ysf9o">
+      <ObjectId>19867</ObjectId>
+      <ColNames>usuario_id</ColNames>
+      <RefTableName>usuario</RefTableName>
+      <RefKeyName>usuario_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="83" parent="28" name="lista_desejos">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1789</StateNumber>
+    </column>
+    <column id="84" parent="28" name="livro">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1789</StateNumber>
+    </column>
+    <foreign-key id="85" parent="28" name="fkgxb5jcuxlfgqm2pj6voo7bv1r">
+      <ObjectId>19842</ObjectId>
+      <ColNames>lista_desejos</ColNames>
+      <RefTableName>lista_desejos</RefTableName>
+      <RefKeyName>lista_desejos_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="86" parent="28" name="fkdv9g7hdyrc4qxqtaliu21bqyk">
+      <ObjectId>19837</ObjectId>
+      <ColNames>livro</ColNames>
+      <RefTableName>livro</RefTableName>
+      <RefKeyName>livro_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="87" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1798</StateNumber>
+      <SequenceName>livro_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;livro_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="88" parent="29" name="desconto">
+      <Position>2</Position>
+      <DataType>double precision|0</DataType>
+      <StateNumber>1798</StateNumber>
+    </column>
+    <column id="89" parent="29" name="preco">
+      <Position>3</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1798</StateNumber>
+    </column>
+    <column id="90" parent="29" name="titulo">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1798</StateNumber>
+    </column>
+    <column id="91" parent="29" name="assunto_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1798</StateNumber>
+    </column>
+    <column id="92" parent="29" name="autor_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1798</StateNumber>
+    </column>
+    <column id="93" parent="29" name="editora_id">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1798</StateNumber>
+    </column>
+    <index id="94" parent="29" name="livro_pkey">
+      <ObjectId>19810</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="95" parent="29" name="livro_pkey">
+      <ObjectId>19811</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>livro_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="96" parent="29" name="fkc6e4td4bvwt7al2jo60ofjayt">
+      <ObjectId>19872</ObjectId>
+      <ColNames>assunto_id</ColNames>
+      <RefTableName>assunto</RefTableName>
+      <RefKeyName>assunto_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="97" parent="29" name="fkbikeff7o0o2h3dciq42ykea6g">
+      <ObjectId>19877</ObjectId>
+      <ColNames>autor_id</ColNames>
+      <RefTableName>autor</RefTableName>
+      <RefKeyName>autor_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="98" parent="29" name="fkhu78euulbppsxbwcvrb0a98sk">
+      <ObjectId>19882</ObjectId>
+      <ColNames>editora_id</ColNames>
+      <RefTableName>editora</RefTableName>
+      <RefKeyName>editora_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="99" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1799</StateNumber>
+      <SequenceName>usuario_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;usuario_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="100" parent="30" name="admin">
+      <Position>2</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1799</StateNumber>
+    </column>
+    <column id="101" parent="30" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1799</StateNumber>
+    </column>
+    <column id="102" parent="30" name="foto">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1799</StateNumber>
+    </column>
+    <column id="103" parent="30" name="nome">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1799</StateNumber>
+    </column>
+    <column id="104" parent="30" name="senha">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1799</StateNumber>
+    </column>
+    <column id="105" parent="30" name="cartao_id">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1799</StateNumber>
+    </column>
+    <index id="106" parent="30" name="usuario_pkey">
+      <ObjectId>19821</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="107" parent="30" name="uk_3sa9scccci31kcq4jk8hoe6lu">
+      <ObjectId>19825</ObjectId>
+      <ColNames>cartao_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="108" parent="30" name="usuario_pkey">
+      <ObjectId>19822</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>usuario_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="109" parent="30" name="uk_3sa9scccci31kcq4jk8hoe6lu">
+      <ObjectId>19826</ObjectId>
+      <ColNames>cartao_id</ColNames>
+      <UnderlyingIndexName>uk_3sa9scccci31kcq4jk8hoe6lu</UnderlyingIndexName>
+    </key>
+    <foreign-key id="110" parent="30" name="fktrgvpqvcsmkcn7jk0ingc9grr">
+      <ObjectId>19887</ObjectId>
+      <ColNames>cartao_id</ColNames>
+      <RefTableName>cartao</RefTableName>
+      <RefKeyName>cartao_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
