@@ -39,11 +39,12 @@ public class EditoraMB {
         editoras = listar();
     }
 
-    public void cadastrar() {
+    public String cadastrar() {
         try {
             editoraDAO.save(editora);
+            return "index";
         } catch (Exception ex) {
-
+            return "erro";
         }
     }
 
@@ -63,5 +64,50 @@ public class EditoraMB {
 
         }
         return editoras;
+    }
+
+    public String gotoListar() {
+        try {
+            listar();
+            return "lista";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String editar() {
+        try {
+            editoraDAO.update(editora);
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoEditar() {
+        try {
+            editora = editoraDAO.getEditoraById(editora.getId());
+            return "editar";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String deletar() {
+        try {
+            editoraDAO.delete(editora.getId());
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoDeletar() {
+        try {
+            editora = editoraDAO.getEditoraById(editora.getId());
+            return "deletar";
+        } catch (Exception ex) {
+            return "erro";
+        }
     }
 }

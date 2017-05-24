@@ -31,14 +31,18 @@ public class BandeiraDAO {
             bandeiras = entityManager.createQuery("from Bandeira").getResultList();
         } catch (Exception ex) {
 
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
-
-            }
         }
         return bandeiras;
+    }
+
+    public Bandeira getBandeiraById(Integer id) {
+        Bandeira bandeira = null;
+        try {
+            bandeira = entityManager.find(Bandeira.class, id);
+        } catch (Exception ex) {
+
+        }
+        return bandeira;
     }
 
     public void save(Bandeira bandeira) {
@@ -48,12 +52,28 @@ public class BandeiraDAO {
             entityManager.getTransaction().commit();
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
+        }
+    }
 
-            }
+    public void update(Bandeira bandeira) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(bandeira);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            entityManager.getTransaction().rollback();
+        }
+    }
+
+    public void delete(Integer id) {
+        Bandeira bandeira;
+        try {
+            entityManager.getTransaction().begin();
+            bandeira = entityManager.find(Bandeira.class, id);
+            entityManager.remove(bandeira);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            entityManager.getTransaction().rollback();
         }
     }
 }

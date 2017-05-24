@@ -25,20 +25,24 @@ public class LivroDAO {
     }
 
     @SuppressWarnings("unchecked")
-    public List<Livro> usuarioList() {
+    public List<Livro> livroList() {
         List<Livro> livros = null;
         try {
             livros = entityManager.createQuery("from Livro").getResultList();
         } catch (Exception ex) {
 
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
-
-            }
         }
         return livros;
+    }
+
+    public Livro getLivroById(Integer id) {
+        Livro livro = null;
+        try {
+            livro = entityManager.find(Livro.class, id);
+        } catch (Exception ex) {
+
+        }
+        return livro;
     }
 
     public void save(Livro livro) {
@@ -48,12 +52,28 @@ public class LivroDAO {
             entityManager.getTransaction().commit();
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
+        }
+    }
 
-            }
+    public void update(Livro livro) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(livro);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            entityManager.getTransaction().rollback();
+        }
+    }
+
+    public void delete(Integer id) {
+        Livro livro;
+        try {
+            entityManager.getTransaction().begin();
+            livro = entityManager.find(Livro.class, id);
+            entityManager.remove(livro);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            entityManager.getTransaction().rollback();
         }
     }
 }

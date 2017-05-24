@@ -8,12 +8,23 @@
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Bookly</title>
+    <link rel="stylesheet" href="../../assets/css/app.css"/>
 </h:head>
 <h:body>
-    <h1>Cadastro de Assunto</h1>
-    <h:form>
-        <h:inputText value="#{assuntoMB.assunto.nome}" a:placeholder="Nome"/>
-        <h:commandButton value="Cadastrar" action="#{assuntoMB.cadastrar}"/>
-    </h:form>
+    <div class="container column">
+        <h1>Cadastro de Assunto</h1>
+        <h:form>
+            <div class="column">
+                <div class="row">
+                    <h:inputText styleClass="inputGray" id="nome" required="true" requiredMessage="Por favor, preencha o nome do assunto" value="#{assuntoMB.assunto.nome}" a:placeholder="Nome"/>
+                    <h:message for="nome"/>
+                </div>
+            </div>
+            <div class="row">
+                <h:link styleClass="buttonGray right10" value="Voltar" outcome="index"/>
+                <h:commandButton styleClass="buttonGray" value="Cadastrar" action="#{assuntoMB.cadastrar}"/>
+            </div>
+        </h:form>
+    </div>
 </h:body>
 </html>

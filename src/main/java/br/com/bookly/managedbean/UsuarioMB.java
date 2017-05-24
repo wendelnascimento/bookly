@@ -23,13 +23,16 @@ public class UsuarioMB {
         this.usuario = usuario;
     }
 
-    public String listar() {
-        UsuarioDAO usuarioDAO = UsuarioDAO.getInstance();
-        List<Usuario> usuarios = usuarioDAO.usuarioList();
-        return "ok";
+    public UsuarioMB() {
+        usuario = new Usuario();
     }
 
-
-
-
+    public String gotoCadastro() {
+        try {
+            usuario = new Usuario();
+            return "cadastro";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
 }

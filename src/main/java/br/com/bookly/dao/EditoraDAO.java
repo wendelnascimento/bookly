@@ -31,14 +31,18 @@ public class EditoraDAO {
             editoras = entityManager.createQuery("from Editora").getResultList();
         } catch (Exception ex) {
 
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
-
-            }
         }
         return editoras;
+    }
+
+    public Editora getEditoraById(Integer id) {
+        Editora editora = null;
+        try {
+            editora = entityManager.find(Editora.class, id);
+        } catch (Exception ex) {
+
+        }
+        return editora;
     }
 
     public void save(Editora editora) {
@@ -48,12 +52,28 @@ public class EditoraDAO {
             entityManager.getTransaction().commit();
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
+        }
+    }
 
-            }
+    public void update(Editora editora) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(editora);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            entityManager.getTransaction().rollback();
+        }
+    }
+
+    public void delete(Integer id) {
+        Editora editora;
+        try {
+            entityManager.getTransaction().begin();
+            editora = entityManager.find(Editora.class, id);
+            entityManager.remove(editora);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            entityManager.getTransaction().rollback();
         }
     }
 }

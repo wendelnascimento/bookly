@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bookly</title>
+    <link rel="stylesheet" href="../../assets/css/app.css"/>
+</h:head>
+<h:body>
+    <div class="container column">
+        <h1>Edição de Livro</h1>
+        <h:form>
+            <div class="column">
+                <div class="row">
+                    <h:inputText id="titulo" required="true" requiredMessage="Por favor, preencha o título do livro" styleClass="inputGray" value="#{livroMB.livro.titulo}" a:placeholder="Título"/>
+                    <h:message for="titulo"/>
+                </div>
+                <div class="row">
+                    <h:selectOneMenu id="autor" required="true" requiredMessage="Por favor, selecione o autor" styleClass="inputGray" value="#{livroMB.livro.autor.id}">
+                        <f:selectItems value="#{autorMB.autores}" var="autor"
+                                       itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
+                    </h:selectOneMenu>
+                    <h:message for="autor"/>
+                </div>
+                <div class="row">
+                    <h:selectOneMenu id="editora" required="true" requiredMessage="Por favor, selecione a editora" styleClass="inputGray" value="#{livroMB.livro.editora.id}">
+                        <f:selectItems value="#{editoraMB.editoras}" var="editora"
+                                       itemLabel="#{editora.nome}" itemValue="#{editora.id}" />
+                    </h:selectOneMenu>
+                    <h:message for="editora"/>
+                </div>
+                <div class="row">
+                    <h:selectOneMenu id="assunto" required="true" requiredMessage="Por favor, selecione o assunto" styleClass="inputGray" value="#{livroMB.livro.assunto.id}">
+                        <f:selectItems value="#{assuntoMB.assuntos}" var="assunto"
+                                       itemLabel="#{assunto.nome}" itemValue="#{assunto.id}" />
+                    </h:selectOneMenu>
+                    <h:message for="assunto"/>
+                </div>
+                <div class="row">
+                    <h:inputText styleClass="inputGray" value="#{livroMB.livro.foto}" a:placeholder="Foto"/>
+                </div>
+                <div class="row">
+                    <h:inputText id="preco" required="true" requiredMessage="Por favor, preencha o preço do livro" converterMessage="Por favor, apenas números" styleClass="inputGray" value="#{livroMB.livro.preco}" a:placeholder="Preço"/>
+                    <h:message for="preco"/>
+                </div>
+                <div class="row">
+                    <h:inputText id="desconto" value="#{livroMB.livro.desconto}" converterMessage="Por favor, apenas números" styleClass="inputGray" a:placeholder="Desconto"/>
+                    <h:message for="desconto"/>
+                </div>
+            </div>
+            <div class="row">
+                <h:link styleClass="buttonGray right10" value="Voltar" outcome="#{livroMB.gotoListar()}"/>
+                <h:commandButton styleClass="buttonGray" value="Cadastrar" action="#{livroMB.cadastrar}"/>
+            </div>
+        </h:form>
+    </div>
+</h:body>
+</html>

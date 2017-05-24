@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bookly</title>
+    <link rel="stylesheet" href="../../assets/css/app.css"/>
+</h:head>
+<h:body>
+    <div class="container column">
+        <h1>Deletar Livro</h1>
+        <h:outputText value="Você tem certeza de que deseja remover o livro #{livroMB.livro.titulo}?"></h:outputText>
+        <h:form>
+            <h:commandLink styleClass="buttonGray right10" value="Voltar" action="#{livroMB.gotoListar}"/>
+            <h:commandButton styleClass="buttonGray" value="Deletar" action="#{livroMB.deletar}"/>
+        </h:form>
+    </div>
+</h:body>
+</html>

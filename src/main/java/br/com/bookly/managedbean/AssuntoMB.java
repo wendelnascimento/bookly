@@ -68,7 +68,7 @@ public class AssuntoMB {
 
     public String gotoListar() {
         try {
-            assuntos = assuntoDAO.assuntoList();
+            listar();
             return "lista";
         } catch (Exception ex) {
             return "erro";

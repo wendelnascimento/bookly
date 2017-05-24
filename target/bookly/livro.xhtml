@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bookly</title>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+</h:head>
+<h:body>
+    <ui:include src="includes/header.xhtml"/>
+    <h:form>
+        <section class="container column">
+            <div class="row">
+                <div class="livroComprar">
+                    <h2>#{livroMB.livro.titulo}</h2>
+                    <div class="row">
+                        <img src="#{livroMB.livro.foto}" alt="#{livroMB.livro.titulo}"/>
+                        <div class="column">
+                            <span>Autor: #{livroMB.livro.autor.nome}</span>
+                            <span>Editora: #{livroMB.livro.editora.nome}</span>
+                            <span>Assunto: #{livroMB.livro.assunto.nome}</span>
+                            <span class="preco">R$#{livroMB.livro.preco - livroMB.livro.desconto}</span>
+                            <div class="row">
+                                <h:commandButton styleClass="buttonGray right10" value="Adicionar ao carrinho" action="#{carrinhoMB.adicionaCarrinho}"/>
+                                <h:commandButton styleClass="buttonGray" value="Adicionar à lista de desejos"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </h:form>
+</h:body>
+</html>

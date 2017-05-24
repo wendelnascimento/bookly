@@ -39,11 +39,12 @@ public class BandeiraMB {
         bandeiras = new ArrayList<Bandeira>();
     }
 
-    public void cadastrar() {
+    public String cadastrar() {
         try {
             bandeiraDAO.save(bandeira);
+            return "index";
         } catch (Exception ex) {
-
+            return "erro";
         }
     }
 
@@ -51,6 +52,60 @@ public class BandeiraMB {
         try {
             bandeira = new Bandeira();
             return "cadastro";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String editar() {
+        try {
+            bandeiraDAO.update(bandeira);
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoEditar() {
+        try {
+            bandeira = bandeiraDAO.getBandeiraById(bandeira.getId());
+            return "editar";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public List<Bandeira> listar() {
+        try {
+            bandeiras = bandeiraDAO.bandeiraList();
+        } catch (Exception ex) {
+
+        }
+        return bandeiras;
+    }
+
+    public String gotoListar() {
+        try {
+            listar();
+            return "lista";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String deletar() {
+        try {
+            bandeiraDAO.delete(bandeira.getId());
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoDeletar() {
+        try {
+            bandeira = bandeiraDAO.getBandeiraById(bandeira.getId());
+            return "deletar";
         } catch (Exception ex) {
             return "erro";
         }

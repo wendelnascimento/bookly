@@ -8,36 +8,39 @@
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Bookly</title>
+    <link rel="stylesheet" href="../../assets/css/app.css"/>
+    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css"/>
 </h:head>
 <h:body>
-    <h1>Lista de Assuntos</h1>
-    <h:form>
-        <table>
-            <thead>
-            <tr>
-                <td>#</td>
-                <td>Nome</td>
-                <td></td>
-            </tr>
-            </thead>
-            <ui:repeat var="assunto" value="#{assuntoMB.assuntos}">
+    <div class="container column">
+        <h1>Lista de Assuntos</h1>
+        <h:form>
+            <table>
+                <thead>
                 <tr>
-                    <td>#{assunto.id}</td>
-                    <td>#{assunto.nome}</td>
-                    <td>
-                        <h:commandLink value="" action="#{assuntoMB.gotoEditar}">
-                            <i class="fa fa-pencil"></i>
-                            <f:setPropertyActionListener value="#{assunto.id}" target="#{assuntoMB.assunto.id}" />
-                        </h:commandLink>
-                        <h:commandLink value="" action="#{assuntoMB.gotoDeletar}">
-                            <i class="fa fa-trash"></i>
-                            <f:setPropertyActionListener value="#{assunto.id}" target="#{assuntoMB.assunto.id}" />
-                        </h:commandLink>
-                    </td>
+                    <td>#</td>
+                    <td>Nome</td>
+                    <td></td>
                 </tr>
-            </ui:repeat>
-        </table>
-    </h:form>
-    <script type="text/javascript" src="https://use.fontawesome.com/b43ee5675b.js"></script>
+                </thead>
+                <ui:repeat var="assunto" value="#{assuntoMB.assuntos}">
+                    <tr>
+                        <td>#{assunto.id}</td>
+                        <td>#{assunto.nome}</td>
+                        <td>
+                            <h:commandLink value="" action="#{assuntoMB.gotoEditar}">
+                                <i class="fa fa-pencil"></i>
+                                <f:setPropertyActionListener value="#{assunto.id}" target="#{assuntoMB.assunto.id}" />
+                            </h:commandLink>
+                            <h:commandLink value="" action="#{assuntoMB.gotoDeletar}">
+                                <i class="fa fa-trash"></i>
+                                <f:setPropertyActionListener value="#{assunto.id}" target="#{assuntoMB.assunto.id}" />
+                            </h:commandLink>
+                        </td>
+                    </tr>
+                </ui:repeat>
+            </table>
+        </h:form>
+    </div>
 </h:body>
 </html>

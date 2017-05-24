@@ -31,14 +31,18 @@ public class AutorDAO {
             autores = entityManager.createQuery("from Autor").getResultList();
         } catch (Exception ex) {
 
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
-
-            }
         }
         return autores;
+    }
+
+    public Autor getAutorById(Integer id) {
+        Autor autor = null;
+        try {
+            autor = entityManager.find(Autor.class, id);
+        } catch (Exception ex) {
+
+        }
+        return autor;
     }
 
     public void save(Autor autor) {
@@ -48,12 +52,28 @@ public class AutorDAO {
             entityManager.getTransaction().commit();
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
+        }
+    }
 
-            }
+    public void update(Autor autor) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(autor);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            entityManager.getTransaction().rollback();
+        }
+    }
+
+    public void delete(Integer id) {
+        Autor autor;
+        try {
+            entityManager.getTransaction().begin();
+            autor = entityManager.find(Autor.class, id);
+            entityManager.remove(autor);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            entityManager.getTransaction().rollback();
         }
     }
 }

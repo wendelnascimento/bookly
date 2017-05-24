@@ -37,15 +37,16 @@ public class LivroMB {
 
     public LivroMB() {
         livro = new Livro();
-        livros = new ArrayList<Livro>();
+        livros = listar();
     }
 
-    public void cadastrar() {
+    public String cadastrar() {
         try {
-
             livroDAO.save(livro);
+            listar();
+            return "index";
         } catch (Exception ex) {
-
+            return "erro";
         }
     }
 
@@ -54,6 +55,73 @@ public class LivroMB {
             livro = new Livro();
             return "cadastro";
         } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public List<Livro> listar() {
+        try {
+            livros = livroDAO.livroList();
+            for(Livro livroNew: livros) {
+                livroNew = livroDAO.getLivroById(livroNew.getId());
+            }
+        } catch (Exception ex) {
+
+        }
+        return livros;
+    }
+
+    public String gotoListar() {
+        try {
+            listar();
+            return "lista";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String editar() {
+        try {
+            livroDAO.update(livro);
+            listar();
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoEditar() {
+        try {
+            livro = livroDAO.getLivroById(livro.getId());
+            return "editar";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String deletar() {
+        try {
+            livroDAO.delete(livro.getId());
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoDeletar() {
+        try {
+            livro = livroDAO.getLivroById(livro.getId());
+            return "deletar";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoLivro() {
+        try {
+            livro = livroDAO.getLivroById(livro.getId());
+            return "livro";
+        } catch(Exception ex) {
             return "erro";
         }
     }

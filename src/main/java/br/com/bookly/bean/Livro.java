@@ -27,7 +27,9 @@ public class Livro {
     @Column(name = "preco", nullable = false)
     private Double preco;
 
-    private Double desconto;
+    private Double desconto = 0.0;
+
+    private String foto;
 
     @ManyToMany(mappedBy = "livros", cascade = CascadeType.ALL)
     private List<ListaDesejos> listaDesejos;
@@ -95,6 +97,14 @@ public class Livro {
 
     public void setDesconto(Double desconto) {
         this.desconto = desconto;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public List<ListaDesejos> getListaDesejos() {

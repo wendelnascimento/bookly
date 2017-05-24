@@ -8,13 +8,27 @@
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Bookly</title>
+    <link rel="stylesheet" href="../../assets/css/app.css"/>
 </h:head>
 <h:body>
-    <h1>Cadastro de Frete</h1>
-    <h:form>
-        <h:inputText value="#{freteMB.frete.nome}" a:placeholder="Nome"/>
-        <h:inputText value="#{freteMB.frete.valor}" a:placeholder="Valor"/>
-        <h:commandButton value="Cadastrar" action="#{freteMB.cadastrar}"/>
-    </h:form>
+    <div class="container column">
+        <h1>Cadastro de Frete</h1>
+        <h:form>
+            <div class="column">
+                <div class="row">
+                    <h:inputText id="nome" required="true" requiredMessage="Por favor, preencha o nome do frete" styleClass="inputGray" value="#{freteMB.frete.nome}" a:placeholder="Nome"/>
+                    <h:message for="nome"/>
+                </div>
+                <div class="row">
+                    <h:inputText id="valor" required="true" requiredMessage="Por favor, preencha o valor do frete" styleClass="inputGray" value="#{freteMB.frete.valor}" a:placeholder="Valor"/>
+                    <h:message for="valor"/>
+                </div>
+            </div>
+            <div class="row">
+                <h:link styleClass="buttonGray right10" value="Voltar" outcome="index"/>
+                <h:commandButton styleClass="buttonGray" value="Cadastrar" action="#{freteMB.cadastrar}"/>
+            </div>
+        </h:form>
+    </div>
 </h:body>
 </html>

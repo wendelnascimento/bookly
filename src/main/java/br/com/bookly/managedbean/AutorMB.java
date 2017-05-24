@@ -39,11 +39,12 @@ public class AutorMB {
         autores = listar();
     }
 
-    public void cadastrar() {
+    public String cadastrar() {
         try {
             autorDAO.save(autor);
+            return "index";
         } catch (Exception ex) {
-
+            return "erro";
         }
     }
 
@@ -63,5 +64,50 @@ public class AutorMB {
 
         }
         return autores;
+    }
+
+    public String gotoListar() {
+        try {
+            listar();
+            return "lista";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String editar() {
+        try {
+            autorDAO.update(autor);
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoEditar() {
+        try {
+            autor = autorDAO.getAutorById(autor.getId());
+            return "editar";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String deletar() {
+        try {
+            autorDAO.delete(autor.getId());
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoDeletar() {
+        try {
+            autor = autorDAO.getAutorById(autor.getId());
+            return "deletar";
+        } catch (Exception ex) {
+            return "erro";
+        }
     }
 }

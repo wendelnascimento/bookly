@@ -8,10 +8,12 @@
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Bookly</title>
+    <link rel="stylesheet" href="../../assets/css/app.css"/>
 </h:head>
 <h:body>
-    <h:form>
-        <h:commandLink value="Cadastrar" action="#{bandeiraMB.gotoCadastrar}"/>
+    <h:form styleClass="mainForm">
+        <h:commandLink styleClass="menuLink" value="Cadastrar" action="#{bandeiraMB.gotoCadastrar}"/>
+        <h:commandLink styleClass="menuLink" value="Listar" action="#{bandeiraMB.gotoListar}"/>
     </h:form>
 </h:body>
 </html>

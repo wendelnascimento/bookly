@@ -39,11 +39,12 @@ public class FreteMB {
         fretes = new ArrayList<Frete>();
     }
 
-    public void cadastrar() {
+    public String cadastrar() {
         try {
             freteDAO.save(frete);
+            return "index";
         } catch (Exception ex) {
-
+            return "erro";
         }
     }
 
@@ -51,6 +52,60 @@ public class FreteMB {
         try {
             frete = new Frete();
             return "cadastro";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public List<Frete> listar() {
+        try {
+            fretes = freteDAO.freteList();
+        } catch (Exception ex) {
+
+        }
+        return fretes;
+    }
+
+    public String gotoListar() {
+        try {
+            listar();
+            return "lista";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String editar() {
+        try {
+            freteDAO.update(frete);
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoEditar() {
+        try {
+            frete = freteDAO.getFreteById(frete.getId());
+            return "editar";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String deletar() {
+        try {
+            freteDAO.delete(frete.getId());
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
+
+    public String gotoDeletar() {
+        try {
+            frete = freteDAO.getFreteById(frete.getId());
+            return "deletar";
         } catch (Exception ex) {
             return "erro";
         }

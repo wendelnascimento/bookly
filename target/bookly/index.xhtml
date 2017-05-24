@@ -8,8 +8,14 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Bookly</title>
+        <link rel="stylesheet" href="assets/css/app.css"/>
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
     </h:head>
     <h:body>
-        <h1>Bookly</h1>
+        <ui:include src="includes/header.xhtml"/>
+        <section class="container">
+            <h2>Livros</h2>
+            <ui:include src="includes/listaLivros.xhtml"/>
+        </section>
     </h:body>
 </html>

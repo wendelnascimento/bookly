@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bookly</title>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+</h:head>
+<h:body>
+    <ui:include src="includes/header.xhtml"/>
+    <section class="container column">
+        <div class="column">
+            <ui:repeat var="livro" value="#{carrinhoMB.carrinho}">
+                <div class="carrinhoItem">
+                    <img src="#{livro.foto}" alt="#{livro.titulo}"/>
+                    <span>#{livro.titulo}</span>
+                </div>
+            </ui:repeat>
+        </div>
+        <span>Total: #{carrinhoMB.totalCarrinho}</span>
+    </section>
+</h:body>
+</html>

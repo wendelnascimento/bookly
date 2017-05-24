@@ -33,12 +33,6 @@ public class UsuarioDAO {
             entityManager.createQuery("from Usuario").getResultList();
         } catch (Exception ex) {
 
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
-
-            }
         }
         return usuarios;
     }
@@ -50,12 +44,6 @@ public class UsuarioDAO {
             entityManager.getTransaction().commit();
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
-        } finally {
-            try {
-                entityManager.close();
-            } catch (Exception ex) {
-
-            }
         }
     }
 }

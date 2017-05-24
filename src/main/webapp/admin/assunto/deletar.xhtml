@@ -8,13 +8,16 @@
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Bookly</title>
+    <link rel="stylesheet" href="../../assets/css/app.css"/>
 </h:head>
 <h:body>
-    <h1>Deletar Assunto</h1>
-    <h:outputText value="Você tem certeza de que deseja remover o assunto #{assuntoMB.assunto.nome}"></h:outputText>
-    <h:form>
-        <h:commandLink value="voltar" action="index"/>
-        <h:commandButton value="Deletar" action="#{assuntoMB.deletar}"/>
-    </h:form>
+    <div class="container column">
+        <h1>Deletar Assunto</h1>
+        <h:outputText value="Você tem certeza de que deseja remover o assunto #{assuntoMB.assunto.nome}?"></h:outputText>
+        <h:form>
+            <h:commandButton styleClass="buttonGray right10" value="Voltar" action="#{assuntoMB.gotoListar}"/>
+            <h:commandButton styleClass="buttonGray" value="Deletar" action="#{assuntoMB.deletar}"/>
+        </h:form>
+    </div>
 </h:body>
 </html>
