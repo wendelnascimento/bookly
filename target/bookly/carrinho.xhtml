@@ -22,7 +22,18 @@
                 </div>
             </ui:repeat>
         </div>
-        <span>Total: #{carrinhoMB.totalCarrinho}</span>
+        <span>Subtotal dos itens: R$#{carrinhoMB.totalCarrinho}</span>
+        <h3>Frete</h3>
+        <h:form>
+            <div class="row">
+                <h:selectOneMenu id="freteItem" required="true" requiredMessage="Por favor, selecione o frete" styleClass="inputGray" value="#{carrinhoMB.frete.id}">
+                    <f:selectItems value="#{freteMB.fretes}" var="frete"
+                                   itemLabel="#{frete.nome}" itemValue="#{frete.id}" />
+                </h:selectOneMenu>
+                <h:message for="freteItem"/>
+            </div>
+            <h:commandButton value="Confirmar compra" styleClass="buttonGray" action="#{carrinhoMB.gotoConfirmar}"/>
+        </h:form>
     </section>
 </h:body>
 </html>

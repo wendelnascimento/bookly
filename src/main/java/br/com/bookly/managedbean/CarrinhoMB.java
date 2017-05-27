@@ -1,6 +1,8 @@
 package br.com.bookly.managedbean;
 
+import br.com.bookly.bean.Frete;
 import br.com.bookly.bean.Livro;
+import br.com.bookly.dao.FreteDAO;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -14,9 +16,13 @@ import java.util.List;
 @ManagedBean
 @SessionScoped
 public class CarrinhoMB {
-    public List<Livro> carrinho;
+    private List<Livro> carrinho;
 
-    public Double totalCarrinho = 0.0;
+    private Double totalCarrinho = 0.0;
+
+    private Frete frete;
+
+    private FreteDAO freteDao = FreteDAO.getInstance();
 
     @ManagedProperty(value = "#{livroMB}")
     public LivroMB livroMB;
@@ -45,8 +51,17 @@ public class CarrinhoMB {
         this.totalCarrinho = totalCarrinho;
     }
 
+    public Frete getFrete() {
+        return frete;
+    }
+
+    public void setFrete(Frete frete) {
+        this.frete = frete;
+    }
+
     public CarrinhoMB() {
         carrinho = new ArrayList<Livro>();
+        frete = new Frete();
     }
 
     public String adicionaCarrinho() {
@@ -57,5 +72,16 @@ public class CarrinhoMB {
         } catch(Exception ex) {
             return "erro";
         }
+    }
+
+    public String gotoConfirmar() {
+        try {
+            frete = freteDao.getFreteById(frete.getId());
+            totalCarrinho += frete.getValor();
+            return "confirmar";
+        } catch (Exception ex) {
+            return "erro";
+        }
+
     }
 }

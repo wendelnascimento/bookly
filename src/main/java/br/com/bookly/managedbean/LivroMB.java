@@ -125,4 +125,13 @@ public class LivroMB {
             return "erro";
         }
     }
+
+    public String pesquisar() {
+        try {
+            livros = livroDAO.getLivroByName(livro.getTitulo());
+            return "index";
+        } catch (Exception ex) {
+            return "erro";
+        }
+    }
 }

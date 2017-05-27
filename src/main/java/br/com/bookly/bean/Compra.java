@@ -25,7 +25,7 @@ public class Compra {
     @ManyToOne(optional = false)
     private Cartao cartao;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "compra_livro", catalog = "bookly", joinColumns = {
             @JoinColumn(name = "compra", nullable = false)
     }, inverseJoinColumns = {

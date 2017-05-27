@@ -36,7 +36,7 @@ public class FreteMB {
 
     public FreteMB() {
         frete = new Frete();
-        fretes = new ArrayList<Frete>();
+        fretes = listar();
     }
 
     public String cadastrar() {

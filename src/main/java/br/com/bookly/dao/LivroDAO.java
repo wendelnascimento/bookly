@@ -4,6 +4,7 @@ import br.com.bookly.bean.Livro;
 import br.com.bookly.factory.PersistenceManager;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 /**
@@ -75,5 +76,17 @@ public class LivroDAO {
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
         }
+    }
+
+    public List<Livro> getLivroByName(String nome) {
+        List<Livro> livros = null;
+        try {
+            Query query = entityManager.createQuery("from Livro where titulo like :nome");
+            query.setParameter("nome", "%"+nome+"%");
+            livros = query.getResultList();
+        } catch (Exception ex) {
+
+        }
+        return livros;
     }
 }

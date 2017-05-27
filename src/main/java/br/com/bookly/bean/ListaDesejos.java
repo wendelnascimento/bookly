@@ -15,7 +15,7 @@ public class ListaDesejos {
     @OneToOne(optional = false)
     private Usuario usuario;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "lista_desejos_livro", catalog = "bookly", joinColumns = {
             @JoinColumn(name = "lista_desejos", nullable = false)
     }, inverseJoinColumns = {

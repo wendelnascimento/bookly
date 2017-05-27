@@ -16,25 +16,25 @@
         <h:form>
             <div class="column">
                 <div class="row">
-                    <h:inputText id="titulo" required="true" requiredMessage="Por favor, preencha o título do livro" styleClass="inputGray" value="#{livroMB.livro.titulo}" a:placeholder="Título"/>
+                    <h:inputText id="titulo" required="true" requiredMessage="#{msg.requiredTitle}" styleClass="inputGray" value="#{livroMB.livro.titulo}" a:placeholder="Título"/>
                     <h:message for="titulo"/>
                 </div>
                 <div class="row">
-                    <h:selectOneMenu id="autor" required="true" requiredMessage="Por favor, selecione o autor" styleClass="inputGray" value="#{livroMB.livro.autor.id}">
+                    <h:selectOneMenu id="autor" required="true" requiredMessage="#{msg.requiredAuthor}" styleClass="inputGray" value="#{livroMB.livro.autor.id}">
                         <f:selectItems value="#{autorMB.autores}" var="autor"
                                        itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
                     </h:selectOneMenu>
                     <h:message for="autor"/>
                 </div>
                 <div class="row">
-                    <h:selectOneMenu id="editora" required="true" requiredMessage="Por favor, selecione a editora" styleClass="inputGray" value="#{livroMB.livro.editora.id}">
+                    <h:selectOneMenu id="editora" required="true" requiredMessage="#{msg.requiredSeller}" styleClass="inputGray" value="#{livroMB.livro.editora.id}">
                         <f:selectItems value="#{editoraMB.editoras}" var="editora"
                                        itemLabel="#{editora.nome}" itemValue="#{editora.id}" />
                     </h:selectOneMenu>
                     <h:message for="editora"/>
                 </div>
                 <div class="row">
-                    <h:selectOneMenu id="assunto" required="true" requiredMessage="Por favor, selecione o assunto" styleClass="inputGray" value="#{livroMB.livro.assunto.id}">
+                    <h:selectOneMenu id="assunto" required="true" requiredMessage="#{msg.requiredGenre}" styleClass="inputGray" value="#{livroMB.livro.assunto.id}">
                         <f:selectItems value="#{assuntoMB.assuntos}" var="assunto"
                                        itemLabel="#{assunto.nome}" itemValue="#{assunto.id}" />
                     </h:selectOneMenu>
@@ -44,7 +44,7 @@
                     <h:inputText styleClass="inputGray" value="#{livroMB.livro.foto}" a:placeholder="Foto"/>
                 </div>
                 <div class="row">
-                    <h:inputText id="preco" required="true" requiredMessage="Por favor, preencha o preço do livro" converterMessage="Por favor, apenas números" styleClass="inputGray" value="#{livroMB.livro.preco}" a:placeholder="Preço"/>
+                    <h:inputText id="preco" required="true" requiredMessage="#{msg.requiredPri}" converterMessage="Por favor, apenas números" styleClass="inputGray" value="#{livroMB.livro.preco}" a:placeholder="Preço"/>
                     <h:message for="preco"/>
                 </div>
                 <div class="row">

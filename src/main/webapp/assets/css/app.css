@@ -192,6 +192,6 @@ table .fa:hover {
     align-items: center;
 }
 
-.loginBox input[type="text"], .loginBox input[type="password"]  {
+.loginBox input[type="text"], .loginBox input[type="password"], .loginBox select  {
     width: 100%;
 }

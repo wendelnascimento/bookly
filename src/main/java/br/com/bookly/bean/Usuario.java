@@ -107,4 +107,8 @@ public class Usuario {
     public void setCompras(List<Compra> compras) {
         this.compras = compras;
     }
+
+    public Usuario() {
+        this.cartao = new Cartao();
+    }
 }

@@ -22,12 +22,12 @@
                     <h:message for="email"/>
                 </div>
                 <div class="row">
-                    <h:inputSecret id="senha" styleClass="inputGray" required="true" requiredMessage="Por favor, preencha a senha" value="#{usuarioMB.usuario.senha}" a:placeholder="Placeholder"/>
+                    <h:inputSecret id="senha" styleClass="inputGray" required="true" requiredMessage="Por favor, preencha a senha" value="#{usuarioMB.usuario.senha}" a:placeholder="Senha"/>
                     <h:message for="senha"/>
                 </div>
                 <div class="row">
-                    <h:commandButton styleClass="buttonGray right10" value="Entrar"/>
-                    <h:commandLink styleClass="buttonGray" value="Não possui uma conta? Cadastre-se" action="#{usuarioMB.gotoCadastro}"/>
+                    <h:commandButton styleClass="buttonGray right10" value="Entrar" action="#{usuarioMB.login}"/>
+                    <h:link styleClass="buttonGray" value="Não possui uma conta? Cadastre-se" outcome="#{usuarioMB.gotoCadastro()}"/>
                 </div>
             </h:form>
         </div>

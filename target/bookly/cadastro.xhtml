@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Bookly</title>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+</h:head>
+<h:body>
+    <section class="container loginContainer">
+        <div class="loginBox">
+            <h2>Cadastro</h2>
+            <h:form styleClass="column">
+                <div class="row">
+                    <h:inputText id="nome"  styleClass="inputGray" required="true" requiredMessage="Por favor, preencha o nome" value="#{usuarioMB.usuario.nome}" a:placeholder="Nome"/>
+                    <h:message for="nome"/>
+                </div>
+                <div class="row">
+                    <h:inputText id="email"  styleClass="inputGray" required="true" requiredMessage="Por favor, preencha o email" value="#{usuarioMB.usuario.email}" a:placeholder="Email"/>
+                    <h:message for="email"/>
+                </div>
+                <div class="row">
+                    <h:inputSecret id="senha" styleClass="inputGray" required="true" requiredMessage="Por favor, preencha a senha" value="#{usuarioMB.usuario.senha}" a:placeholder="Senha"/>
+                    <h:message for="senha"/>
+                </div>
+                <div class="row">
+                    <h:inputText id="foto"  styleClass="inputGray" value="#{usuarioMB.usuario.foto}" a:placeholder="Foto"/>
+                </div>
+                <div class="column">
+                    <h3>Cartão</h3>
+                    <div class="row">
+                        <h:inputText id="nomeCartao" required="true" requiredMessage="Por favor, preencha o nome do cartão" styleClass="inputGray" value="#{usuarioMB.usuario.cartao.nome}" a:placeholder="Nome impresso no cartão" />
+                        <h:message for="nomeCartao"/>
+                    </div>
+                    <div class="row">
+                        <h:inputText id="numeroCartao" required="true" requiredMessage="Por favor, preencha o numero do cartão" styleClass="inputGray" value="#{usuarioMB.usuario.cartao.numero}" a:placeholder="Número do cartão" />
+                        <h:message for="numeroCartao"/>
+                    </div>
+                    <div class="row">
+                        <h:inputText id="validadeCartao" required="true" requiredMessage="Por favor, preencha a validade do cartão" styleClass="inputGray" value="#{usuarioMB.usuario.cartao.validade}" a:placeholder="Validade do cartão" />
+                        <h:message for="validadeCartao"/>
+                    </div>
+                    <div class="row">
+                        <h:inputText id="cvvCartao" required="true" requiredMessage="Por favor, preencha o CVV do cartão" styleClass="inputGray" value="#{usuarioMB.usuario.cartao.cvv}" a:placeholder="CVV do cartão" />
+                        <h:message for="cvvCartao"/>
+                    </div>
+                    <div class="row">
+                        <h:selectOneMenu id="bandeiraCartao" required="true" requiredMessage="Por favor, selecione a bandeira" styleClass="inputGray" value="#{usuarioMB.usuario.cartao.bandeira.id}">
+                            <f:selectItems value="#{bandeiraMB.bandeiras}" var="bandeira"
+                                           itemLabel="#{bandeira.nome}" itemValue="#{bandeira.id}" />
+                        </h:selectOneMenu>
+                        <h:message for="bandeiraCartao"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <h:commandButton styleClass="buttonGray right10" value="Cadastrar" action="#{usuarioMB.cadastrar}"/>
+                    <h:link styleClass="buttonGray" value="Já possui uma conta? Entre" outcome="#{usuarioMB.gotoLogin()}"/>
+                </div>
+            </h:form>
+        </div>
+    </section>
+</h:body>
+</html>
+

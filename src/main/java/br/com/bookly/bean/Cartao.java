@@ -97,4 +97,8 @@ public class Cartao {
     public void setCompras(List<Compra> compras) {
         this.compras = compras;
     }
+
+    public Cartao() {
+        this.bandeira = new Bandeira();
+    }
 }

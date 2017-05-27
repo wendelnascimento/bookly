@@ -36,7 +36,7 @@ public class BandeiraMB {
 
     public BandeiraMB() {
         bandeira = new Bandeira();
-        bandeiras = new ArrayList<Bandeira>();
+        bandeiras = listar();
     }
 
     public String cadastrar() {

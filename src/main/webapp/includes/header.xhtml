@@ -22,7 +22,7 @@
                 <div class="searchBarContainer">
                     <h:form>
                         <h:inputText value="" a:placeholder="Qual livro você procura?"/>
-                        <h:commandLink value="" action="admin/">
+                        <h:commandLink value="#{livroMB.livro.titulo}" action="#{livroMB.pesquisar}">
                             <i class="fa fa-search"></i>
                         </h:commandLink>
                     </h:form>
